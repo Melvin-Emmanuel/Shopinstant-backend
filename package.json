@@ -1,15 +1,15 @@
 {
       "name": "backend",
-        "version": "1.0.0",
-          "description": "E-commerce Web App Backend using Express.js",
-            "main": "server.js",
-              "scripts": {
-                  "start": "node server.js",
-                      "dev": "nodemon server.js"
-                        },
-                          "keywords": [],
-                            "author": "",
-                              "license": "ISC",
-                                "dependencies": {},
-                                  "devDependencies": {}
-                                  }
+      "version": "1.0.0",
+      "description": "E-commerce Web App Backend using Express.js",
+      "main": "server.js",
+      "scripts": {
+          "start": "node server.js",
+          "dev": "nodemon server.js"
+           },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+     "dependencies": {},
+    "devDependencies": {}
+   }
