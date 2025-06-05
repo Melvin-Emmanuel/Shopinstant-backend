@@ -13,15 +13,14 @@ const userSchema = new mongoose.Schema(
          unique: true,
          match: [ /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,'Please add a valid email', ], },
          password: {
-                                                                                      type: String,
-                                                                                            required: [true, 'Please enter your password'],
-                                                                                                  minlength: 6,
-                                                                                                      },
-                                                                                                          isAdmin: {
-                                                                                                                type: Boolean,
-                                                                                                                      default: false,
-                                                                                                                          },
-                                                                                                                            },
+              type: String,
+              required: [true, 'Please enter your password'],
+              minlength: 6, },
+              isAdmin: {
+                  type: Boolean,
+                  default: false,
+                     },
+          },
                                                                                                                               {
                                                                                                                                   timestamps: true,
                                                                                                                                     }
