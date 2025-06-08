@@ -6,24 +6,19 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
-// Load environment variables
 dotenv.config();
 
-// Connect to database
+
 connectDB();
 
-// Initialize Express app
+
 const app = express();
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
-
-// Routes
 app.use('/api/users', userRoutes);
-
-// Home route (optional)
 app.get('/', (req, res) => {
   res.send('API is running...');
   });
