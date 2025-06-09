@@ -16,17 +16,17 @@ const protect = asyncHandler(async (req, res, next) => {
 
            next();
           } catch (error) {
-                                                    console.error(error);
-                                                          res.status(401);
-                                                                throw new Error('Not authorized, token failed');
-                                                                    }
-                                                                      }
+                console.error(error);
+                res.status(401);
+                throw new Error('Not authorized, token failed');
+         }
+ }
 
-                                                                        if (!token) {
-                                                                            res.status(401);
-                                                                                throw new Error('Not authorized, no token');
-                                                                                  }
-                                                                                  });
+ if (!token) {
+    res.status(401);
+    throw new Error('Not authorized, no token');
+  }
+ });
 
                                                                                   // Admin middleware - require admin role
                                                                                   const admin = (req, res, next) => {
