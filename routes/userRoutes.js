@@ -1,0 +1,27 @@
+const express = require('express');
+const router = express.Router();
+const {
+  registerUser,
+    authUser,
+      getUserProfile,
+        updateUserProfile,
+          getUsers,
+            deleteUser,
+              getUserById,
+                updateUser,
+                } = require('../controllers/authController');
+
+                const { protect, admin } = require('../middleware/authMiddleware');
+
+                // Public
+                router.post('/register', registerUser);
+                router.post('/login', authUser);
+
+                // Private
+                router.route('/profile').get(protect, getUserProfile).put(protect, updateUserProfile);
+
+                // Admin
+                router.route('/').get(protect, admin, getUsers);
+                router.route('/:id').delete(protect, admin, deleteUser).get(protect, admin, getUserById).put(protect, admin, updateUser);
+
+                module.exports = router;
