@@ -3,24 +3,24 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema(
   {
       name: { type: String, required: true },
-          rating: { type: Number, required: true },
-              comment: { type: String, required: true },
-                  user: {
-                        type: mongoose.Schema.Types.ObjectId,
-                              required: true,
-                                    ref: 'User',
-                                        },
-                                          },
-                                            {
-                                                timestamps: true,
-                                                  }
-                                                  );
+      rating: { type: Number, required: true },
+      comment: { type: String, required: true },
+      user: {
+          type: mongoose.Schema.Types.ObjectId,
+          required: true,
+          ref: 'User',
+           },
+       },
+  {
+   timestamps: true,
+  }
+  );
 
-                                                  const productSchema = new mongoose.Schema(
-                                                    {
-                                                        user: {
-                                                              // Which admin/vendor created this product
-                                                                    type: mongoose.Schema.Types.ObjectId,
+  const productSchema = new mongoose.Schema({
+          user: {                                                        
+
+                                                            
+              type: mongoose.Schema.Types.ObjectId,
                                                                           required: true,
                                                                                 ref: 'User',
                                                                                     },
