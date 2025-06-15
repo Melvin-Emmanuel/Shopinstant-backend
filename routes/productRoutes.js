@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const {
   getProducts,
-    getProductById,
-      deleteProduct,
-        createProduct,
-          updateProduct,
-            createProductReview,
-            } = require('../controllers/productController');
+  getProductById,
+  deleteProduct,
+  createProduct,
+  updateProduct,
+  createProductReview,
+     } = require('../controllers/productController');
 
             const { protect, admin } = require('../middleware/authMiddleware');
 
