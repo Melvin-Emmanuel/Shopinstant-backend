@@ -9,13 +9,10 @@ const {
   createProductReview,
      } = require('../controllers/productController');
 
-            const { protect, admin } = require('../middleware/authMiddleware');
+ const { protect, admin } = require('../middleware/authMiddleware');
 
-            // Public routes
-            router.route('/').get(getProducts).post(protect, admin, createProduct);
-            router.route('/:id').get(getProductById).delete(protect, admin, deleteProduct).put(protect, admin, updateProduct);
+ router.route('/').get(getProducts).post(protect, admin, createProduct);
+ router.route('/:id').get(getProductById).delete(protect, admin, deleteProduct).put(protect, admin, updateProduct);
+ router.route('/:id/reviews').post(protect, createProductReview);
 
-            // Review route (authenticated users)
-            router.route('/:id/reviews').post(protect, createProductReview);
-
-            module.exports = router;
+ module.exports = router;
