@@ -16,13 +16,13 @@ const {
             
             router.route('/myorders').get(protect, getMyOrders);
 
-            // Get order by ID
+            
             router.route('/:id').get(protect, getOrderById);
 
-            // Update to paid
+            
             router.route('/:id/pay').put(protect, updateOrderToPaid);
 
-            // Update to delivered (admin only)
+            
             router.route('/:id/deliver').put(protect, admin, updateOrderToDelivered);
 
             module.exports = router;
