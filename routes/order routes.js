@@ -3,18 +3,17 @@ const router = express.Router();
 const {
   addOrderItems,
     getOrderById,
-      updateOrderToPaid,
-        updateOrderToDelivered,
-          getMyOrders,
-            getOrders,
-            } = require('../controllers/orderController');
+    updateOrderToPaid,
+    updateOrderToDelivered,
+    getMyOrders,
+    getOrders,
+      } = require('../controllers/orderController');
 
-            const { protect, admin } = require('../middleware/authMiddleware');
+ const { protect, admin } = require('../middleware/authMiddleware');
 
-            // Create new order
             router.route('/').post(protect, addOrderItems).get(protect, admin, getOrders);
 
-            // Get user's orders
+            
             router.route('/myorders').get(protect, getMyOrders);
 
             // Get order by ID
