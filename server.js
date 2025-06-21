@@ -31,4 +31,12 @@ app.get('/', (req, res) => {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-    });
+    });const path = require('path');
+    const uploadRoutes = require('./routes/uploadRoutes');
+
+    // Add after other routes:
+    app.use('/api/upload', uploadRoutes);
+
+    // Make uploads folder static
+    const __dirname1 = path.resolve();
+    app.use('/uploads', express.static(path.join(__dirname1, '/uploads')));
