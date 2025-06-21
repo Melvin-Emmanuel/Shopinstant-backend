@@ -18,11 +18,11 @@ function checkFileType(file, cb) {
      const mimetype = filetypes.test(file.mimetype);
 
  if (extname && mimetype) {
-                                                  return cb(null, true);
-                                                    } else {
-                                                        cb('Images only!');
-                                                          }
-                                                          }
+    return cb(null, true);
+  } else {
+   cb('Images only!');
+      }
+   }
 
                                                           const upload = multer({
                                                             storage,
